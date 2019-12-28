@@ -1,0 +1,83 @@
+<section class="hero is-info is-fullheight is-bold">
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+       <h6 class="nav-item" *ngIf="!isuser"> <a class="navbar-brand" routerLink="">BLOG</a> </h6>
+       <h6 class="nav-item" *ngIf="isuser"> <a class="navbar-brand" routerLink="/allarticle">BLOG</a> </h6>
+        <button class="navbar-toggler" (click)="toggleNavbar()"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <!--show :to show elements in the drop ,,isOpen a boolean bvariable -->
+        <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item " *ngIf="!isuser">
+              <a class="nav-link" routerLink="" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" *ngIf="!isuser">
+              <a class="nav-link" routerLink="/registre" >sign up</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isuser">
+              <a class="nav-link" routerLink="/addarticle"routerLinkActive="active" >Add articles</a>
+            </li>
+
+
+            <li class="nav-item" *ngIf="isuser">
+              <a class="nav-link" routerLink="/myarticle"routerLinkActive="active" >My articles</a>
+            </li>
+             
+
+                <li class="nav-item" *ngIf="isuser">
+              <a class="nav-link" routerLink="/allarticle"routerLinkActive="active" >All articles</a>
+            </li>
+
+
+
+           
+
+            <li class="nav-item" >
+                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+              </li>
+              
+
+             
+            
+
+
+              <li class="nav-item" *ngIf="isuser">
+                <button class="btn btn-danger" routerLink="/"  (click)="logout()">logout</button>
+              </li>
+
+
+
+
+
+              <li class="nav-item" *ngIf="isuser" >
+                <a class="nav-link" routerLink="/profil" routerLinkActive="active"> hello:{{username}}</a>
+              </li> 
+
+
+              
+              
+              <div class="navbar-header" *ngIf="isuser" >
+                <a class="navbar-brand" routerLink="/profil" >
+             
+                  <img src="{{photo}}" class="_2qgu _7ql _1m6h img" width="32" height="32"   alt="Image d'avatar">
+             
+                </a>
+              </div>
+            
+             
+              <ul class="navbar-nav navbar-right">
+              <li class="nav-item" *ngIf="isuser" >
+                <a class="nav-link" routerLink="/profil" routerLinkActive="active"> {{date}}</a>
+              </li> 
+            </ul>
+
+
+
+
+           </ul>
+        </div>
+      </nav>
+    </div>
+  </section>

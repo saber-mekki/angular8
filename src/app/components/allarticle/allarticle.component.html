@@ -1,0 +1,27 @@
+
+
+
+
+<div class="card mb-3" >
+ <div class="row no-gutters">
+   <br>
+   <br>
+  <div *ngFor="let user of tableau; let i=index">
+      <div class="col-md-4"  >
+        <img src={{user.image}} class="card-img" >
+      </div>
+      <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{user.titleArticle}}</h3>
+        <p>{{user.theme}}</p>
+        <!-- <p class="card-text" [innerHTML]="user.content"></p> -->
+         <a  href="article/{{i}}"  class="btn btn-primary">see more</a>
+        
+         <p class="card-text"><small class="text-muted">by :{{user.user}}</small></p>
+         <p class="card-text"><small class="text-muted">{{user.category}}</small></p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+

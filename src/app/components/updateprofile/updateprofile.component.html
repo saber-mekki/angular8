@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="text-center">Add user</h2>
+    <form [formGroup]="profileForm"  >
+      first name:<br>
+      <h1>{{err}}</h1>
+     <input  formControlName="firstname"  type="text"  ><br>
+     last name<br>
+     <input formControlName="lastname" type="mail"><br>
+     email<br>
+     <input  formControlName="email"  type="text"  ><br>
+     password:<br>
+     <input formControlName="Password" type="password" ><br>
+     age<br>
+     <input  formControlName="age"  type="number"  ><br>
+     <input   type="file" alife-file-to-base64  (changed)="onFileChanges($event)" [(fileModel)]="files"  />
+    </form>
+    <button (click)="addUser()">save</button>
+    </div>
+

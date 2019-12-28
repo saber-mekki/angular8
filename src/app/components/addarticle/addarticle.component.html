@@ -1,0 +1,29 @@
+
+     <h1>Add Article</h1>
+<br>
+<form class="example-form" [formGroup]="addArticleForm">
+  <div class="input-group-prepend">
+    <input type="text" class="form-control" formControlName="titleArticle">
+  </div>
+  <br>
+  
+  <br>
+  <input type="file" alife-file-to-base64  [(fileModel)]="files" formControlName="photo" (change)="onFileChanges($event)"/>
+  <br>
+  <br>
+  <label for="category-select">Choose a category:</label>
+  <select formControlName="category" name="categorie" id="categorie-select">
+    <option value="">Select category</option>
+    <option value="sport">Sport</option>
+    <option value="culture">Culture</option>
+    <option value="political">Political</option>
+  </select>
+  <br>
+  
+  <input type="text" class="form-control" formControlName="theme"> 
+    <ckeditor [editor]="Editor"  formControlName="content" ></ckeditor>
+
+  <button mat-raised-button color="warn" (click)="addArticle()">Add</button>
+</form>
+
+
